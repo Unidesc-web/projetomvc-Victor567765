@@ -1,0 +1,29 @@
+@model CadastroLivros.Models.Livro
+
+<h2>Cadastrar Novo Livro</h2>
+<p>Preencha os campos abaixo para cadastrar um novo livro no sistema. Os campos obrigatórios estão marcados com <span style="color: red">*</span>.</p>
+
+<form asp-action="Create" method="post" class="container">
+    <label for="Titulo">Título do Livro <span style="color: red">*</span></label>
+    <input asp-for="Titulo" placeholder="Ex: Dom Casmurro" />
+    <small>Informe o nome completo do livro.</small>
+    <br/>
+
+    <label for="Autor">Autor <span style="color: red">*</span></label>
+    <input asp-for="Autor" placeholder="Ex: Machado de Assis" />
+    <small>Nome do autor principal da obra.</small>
+    <br/>
+
+    <label for="Ano">Ano de Publicação <span style="color: red">*</span></label>
+    <input asp-for="Ano" type="number" placeholder="Ex: 1899" min="0" max="2100" />
+    <small>Digite o ano em que o livro foi publicado.</small>
+    <br/>
+
+    <label for="ImagemUrl">URL da Capa</label>
+    <input asp-for="ImagemUrl" placeholder="Cole o link da imagem aqui" />
+    <small>Exemplo: https://exemplo.com/capa.jpg</small>
+    <br/>
+
+
+    <button type="submit">Salvar</button>
+</form>

@@ -1,0 +1,18 @@
+@model List<Livro>
+<h2>Livros Cadastrados</h2>
+<a href="/Livros/Create" class="btn-novo-livro">+ Novo Livro</a>
+<div class="card-list">
+@foreach (var livro in Model)
+{
+    <div class="card">
+        @if (!string.IsNullOrEmpty(livro.ImagemUrl))
+        {
+            <img src="@livro.ImagemUrl" alt="Capa de @livro.Titulo" class="capa-livro"/>
+        }
+        <h3>@livro.Titulo</h3>
+        <p><strong>Autor:</strong> @livro.Autor</p>
+        <p><strong>Ano:</strong> @livro.Ano</p>
+        <a href="/Livros/Detalhes/@livro.Id">Detalhes</a>
+    </div>
+}
+</div>

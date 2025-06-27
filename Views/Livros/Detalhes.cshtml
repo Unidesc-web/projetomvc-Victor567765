@@ -1,0 +1,17 @@
+@model CadastroLivros.Models.Livro
+
+<div class="container">
+    <h2>Detalhes do Livro</h2>
+    
+    
+    @if (!string.IsNullOrEmpty(Model.ImagemUrl))
+    {
+        <img src="@Model.ImagemUrl" alt="Capa de @Model.Titulo" 
+             style="max-width: 200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px;" />
+    }
+    
+    <p><strong>Título:</strong> @Model.Titulo</p>
+    <p><strong>Autor:</strong> @Model.Autor</p>
+    <p><strong>Ano:</strong> @Model.Ano</p>
+    <a href="/Livros/Index" class="btn btn-secondary">Voltar</a>
+</div>
